@@ -1,0 +1,20 @@
+{
+  "name": "nodechat",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "./node_modules/.bin/nodemon index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.4",
+    "pug": "^2.0.0-rc.3",
+    "stylus": "^0.54.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.0"
+  }
+}
