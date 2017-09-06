@@ -7,3 +7,8 @@ html {
   max-width: 54rem;
   margin: 0 auto;
 }
+.login-form {
+  max-width: 20rem;
+  margin: 0 auto;
+  text-align: center;
+}

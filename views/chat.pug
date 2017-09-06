@@ -1,0 +1,12 @@
+extends master.pug
+
+block content
+    <h2>#{user.name}, bienvenue sur le chat !</h2>
+
+    <section class="chatbox">
+        // Zone de chat dynamique
+    </section>
+
+block scripts
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/scripts/chat.js"></script>

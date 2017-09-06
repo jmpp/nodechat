@@ -10,8 +10,10 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "body-parser": "^1.17.2",
     "express": "^4.15.4",
     "pug": "^2.0.0-rc.3",
+    "socket.io": "^2.0.3",
     "stylus": "^0.54.5"
   },
   "devDependencies": {

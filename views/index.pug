@@ -1,5 +1,14 @@
-<h2>Page d'accueil</h2>
+extends master.pug
 
-<p>Bienvenue sur la home ! :)</p>
+block content
+    <fieldset class="login-form">
+        <legend>Connexion</legend>
 
-<script src="scripts/app.js"></script>
+        <form method="post" action="/chat">
+            <input type="text" name="pseudo" id="pseudo" placeholder="Choisissez un pseudo...">
+            <button type="submit">Connexion</button>
+        </form>
+    </fieldset>
+
+block scripts
+    <script src="scripts/app.js"></script>
