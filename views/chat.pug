@@ -1,11 +1,38 @@
 extends master.pug
 
-block content
-    <h2>#{user.name}, bienvenue sur le chat !</h2>
+block menu
+    <a href="/" class="btn"><i class="fa fa-sign-out"></i> Déconnexion</a>
 
-    <section class="chatbox">
-        // Zone de chat dynamique
-    </section>
+block content
+    <h2 class="text-center">#{user.name}, bienvenue sur le chat !</h2>
+
+    <div class="chat-container">
+
+        <section class="chat-box">
+            <p><strong>jmpp</strong> salut !</p>
+            <p><strong>jmpp</strong> ça va !?</p>
+            <p><strong>#{user.name}</strong> yop, ça va et toi ?</p>
+            <p><strong>jmpp</strong> Bien bien ;)</p>
+            <p><strong>#{user.name}</strong> Cool! Dis, je peux te demander qqch ?</p>
+            <p class="info"><i class="fa fa-spinner fa-pulse"></i> <ins>#{user.name}</ins> est en train de rédiger un message ...</p>
+        </section><!-- .chat-box -->
+
+        <section class="users-list">
+            <h3><i class="fa fa-users"></i> Utilisateurs connectés</h3>
+            <ul>
+                <li><i class="fa fa-user"></i> @admin</li>
+                <li><i class="fa fa-user"></i> jmpp</li>
+                <li><i class="fa fa-user"></i> #{user.name}</li>
+            </ul>
+        </section><!-- .users-list -->
+
+    </div><!-- .chat-container -->
+
+    <form class="chat-form">
+        <input type="text" autofocus autocomplete="off" spellcheck="false" required name="message" placeholder="Votre message ...">
+
+        <button type="submit">Go!</button>
+    </form>
 
 block scripts
     <script src="/socket.io/socket.io.js"></script>

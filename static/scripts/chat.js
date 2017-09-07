@@ -1,5 +1,6 @@
 (function() {
     'use strict';
 
-    var socket = io.connect('/')
+    // var socket = io.connect('/')
+
 })();

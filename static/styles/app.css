@@ -2,13 +2,153 @@ html {
   background-color: #efefef;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
+  color: #444;
+}
+body {
+  margin: 0;
 }
 .container {
   max-width: 54rem;
   margin: 0 auto;
+  overflow: auto;
+  position: relative;
+}
+h1,
+h2,
+h3 {
+  font-family: Merriweather, serif;
+  font-weight: 600;
+}
+header {
+  background: #e7e7e7;
+  overflow: auto;
+  text-align: center;
+  margin-bottom: 1em;
+  color: #404040;
+  text-shadow: 0 1px 0 #fff;
+}
+header .fa-github-alt {
+  display: block;
+  font-size: 3em;
 }
 .login-form {
-  max-width: 20rem;
+  max-width: 26.25rem;
   margin: 0 auto;
   text-align: center;
+  border: thin solid #404040;
+  border-radius: 2px;
+}
+legend {
+  font-family: Merriweather, serif;
+  font-style: italic;
+}
+form .form-control {
+  margin: 1em 0;
+}
+form label {
+  display: block;
+}
+form input[type=text],
+form input[type=password] {
+  border-radius: 2.1875em;
+  border: 0;
+  padding: 0.4rem 1rem;
+  border: thin solid #cfcfcf;
+}
+form input[type=text]:focus,
+form input[type=password]:focus {
+  outline: 0;
+  box-shadow: 0 0 10px #69aedf;
+  border: thin solid #69aedf;
+}
+input[type=button],
+button,
+.btn {
+  border-radius: 35px;
+  border: 0;
+  padding: 0.4rem 1rem;
+  background: linear-gradient(to bottom, #b8edff 0%, #386dbe 100%);
+  color: #365688;
+  cursor: pointer;
+  text-decoration: none;
+  text-shadow: none;
+  display: inline-block;
+}
+input[type=button]:hover,
+button:hover,
+.btn:hover {
+  background: linear-gradient(to bottom, #b8edff 0%, #386dbe 80%);
+}
+input[type=button]:active,
+button:active,
+.btn:active {
+  outline: 0;
+  background: linear-gradient(to top, #b8edff, #386dbe);
+}
+input[type=button]:focus,
+button:focus,
+.btn:focus {
+  outline: 0;
+  box-shadow: 0 0 10px #69aedf;
+  border: thin solid #69aedf;
+}
+.text-center {
+  text-align: center;
+}
+.btn-menu {
+  position: absolute;
+  top: 1em;
+  right: 0;
+  font-size: 0.8em;
+}
+.chat-container {
+  display: flex;
+  align-items: stretch;
+}
+.chat-box,
+.users-list {
+  background-color: #fff;
+  border: thin solid #e7e7e7;
+  font-size: 0.75em;
+  padding: 0.5em 1em;
+  margin: 0 0.25em;
+  border-radius: 3px;
+}
+.chat-box {
+  flex: 3;
+  max-height: 180px;
+  overflow-y: auto;
+}
+.chat-box > p {
+  margin: 0.33em 0;
+}
+.chat-box > p > strong {
+  background-color: #3f3f3f;
+  color: #fff;
+  display: inline-block;
+  padding: 0.03em 0.4em;
+  border-radius: 2px;
+}
+.chat-box > .info {
+  font-style: italic;
+  font-size: 0.9em;
+  color: #888;
+}
+.users-list {
+  flex: 1;
+}
+.users-list > ul {
+  padding: 0 0 0 1em;
+  list-style: none;
+}
+.chat-form {
+  margin: 1em 0;
+  display: flex;
+}
+.chat-form > input[type=text] {
+  flex: 3;
+  margin-right: 0.5em;
+}
+.chat-form > button[type=submit] {
+  width: auto;
 }

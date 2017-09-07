@@ -2,11 +2,14 @@ extends master.pug
 
 block content
     <fieldset class="login-form">
-        <legend>Connexion</legend>
+        <legend>Choisissez un pseudonyme :</legend>
 
         <form method="post" action="/chat">
-            <input type="text" name="pseudo" id="pseudo" placeholder="Choisissez un pseudo...">
-            <button type="submit">Connexion</button>
+            <div class="form-control">
+                <input type="text" name="pseudo" id="pseudo" placeholder="e.g. JohnDoe">
+            </div>
+
+            <button type="submit"><i class="fa fa-comments"></i> Rejoindre le chat</button>
         </form>
     </fieldset>
 
