@@ -4,36 +4,38 @@ block menu
     <a href="/logout" class="btn"><i class="fa fa-sign-out"></i> Déconnexion</a>
 
 block content
-    <h2 class="text-center">#{user.name}, bienvenue sur le chat !</h2>
+    <main>
+        <h2 class="text-center">{{user.pseudo}}, bienvenue sur le chat !</h2>
 
-    <div class="chat-container">
+        <div class="chat-container">
 
-        <section class="chat-box">
-            <p><strong>jmpp</strong> salut !</p>
-            <p><strong>jmpp</strong> ça va !?</p>
-            <p><strong>#{user.name}</strong> yop, ça va et toi ?</p>
-            <p><strong>jmpp</strong> Bien bien ;)</p>
-            <p><strong>#{user.name}</strong> Cool! Dis, je peux te demander qqch ?</p>
-            <p class="info"><i class="fa fa-spinner fa-pulse"></i> <ins>#{user.name}</ins> est en train de rédiger un message ...</p>
-        </section><!-- .chat-box -->
+            <section class="chat-box">
+                <p v-for="message in messages">
+                    <strong>{{message.pseudo}}</strong> {{message.text}}
+                </p>
 
-        <section class="users-list">
-            <h3><i class="fa fa-users"></i> Utilisateurs connectés</h3>
-            <ul>
-                <li><i class="fa fa-user"></i> @admin</li>
-                <li><i class="fa fa-user"></i> jmpp</li>
-                <li><i class="fa fa-user"></i> #{user.name}</li>
-            </ul>
-        </section><!-- .users-list -->
+                <p class="info" v-if="false"><i class="fa fa-spinner fa-pulse"></i> <ins>toto</ins> est en train de rédiger un message ...</p>
+            </section><!-- .chat-box -->
 
-    </div><!-- .chat-container -->
+            <section class="users-list">
+                <h3><i class="fa fa-users"></i> Utilisateurs connectés</h3>
+                <ul>
+                    <li v-for="username in userList">
+                        <i class="fa fa-user"></i> {{username}}
+                    </li>
+                </ul>
+            </section><!-- .users-list -->
 
-    <form class="chat-form">
-        <input type="text" autofocus autocomplete="off" spellcheck="false" required name="message" placeholder="Votre message ...">
+        </div><!-- .chat-container -->
 
-        <button type="submit">Go!</button>
-    </form>
+        <form class="chat-form" @submit.prevent="postMessage">
+            <input type="text" ref="message" v-model="messageText" autofocus autocomplete="off" spellcheck="false" required name="message" placeholder="Votre message ...">
+
+            <button type="submit">Go!</button>
+        </form>
+    </main>
 
 block scripts
     <script src="/socket.io/socket.io.js"></script>
+    <script src="//unpkg.com/vue@2.4.2/dist/vue.min.js"></script>
     <script src="/scripts/chat.js"></script>
